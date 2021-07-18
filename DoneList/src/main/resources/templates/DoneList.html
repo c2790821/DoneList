@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
 </head>
 <body>
-	<h2>Add Form</h2>
-	<form action="#" th:action="@{/add}" th:object="${person}" method="post">
-	    <input type="text" th:field="*{name}"/>
-	    <input type="text" th:field="*{password}"/>
+	<form th:action="@{/API/DoneList}" th:object="${listModel}" method="post">
+	    <input placeholder="Content" type="text" th:field="*{content}"/>
 	    <input type="submit"/>
 	</form>
    <!--用th:each接收一個可迭代的物件，將thymeleaf傳遞過來的參數"list"，別名為i-->
-    <ul th:each="i:${list}">
+    <ul th:each="listModel:${listModels}">
         <!--將i渲染至畫面-->
-        <li th:text="${i}">
+        <li th:text="'Date: ' + ${listModel.date} + 'Name: ' + ${listModel.content}">
         </li>
     </ul>
 </body>
