@@ -21,7 +21,7 @@ public class DoneListDao {
 	private static final Logger logger = LoggerFactory.getLogger(DoneListController.class);
 	
 	public void insert(ListModel model) {
-		String query = "INSER INTO Done_List(CONTENT,DATE)VALUES(?,?)";
+		String query = "INSERT INTO Done_List(CONTENT,DATE)VALUES(?,?)";
 		jdbcTemplate.update(query, model.getContent(), model.getDate());
 	}
 	
