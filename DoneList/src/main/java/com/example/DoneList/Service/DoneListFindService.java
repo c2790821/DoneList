@@ -1,12 +1,12 @@
-package com.example.Service;
+package com.example.DoneList.Service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.Dao.DoneListDao;
-import com.example.Model.ListModel;
+import com.example.DoneList.Dao.DoneListDao;
+import com.example.DoneList.Model.ListModel;
 
 @Service
 public class DoneListFindService {

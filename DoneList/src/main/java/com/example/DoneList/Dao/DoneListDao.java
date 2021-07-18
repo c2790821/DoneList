@@ -1,4 +1,4 @@
-package com.example.Dao;
+package com.example.DoneList.Dao;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.Map;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.example.Model.ListModel;
+import com.example.DoneList.Model.ListModel;
 
 @Repository
 public class DoneListDao {
