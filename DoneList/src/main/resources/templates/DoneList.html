@@ -2,17 +2,21 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-	<form th:action="@{/API/DoneList}" th:object="${listModel}" method="post">
+<div class="container">
+	<form  class="header" th:action="@{/API/DoneList}" th:object="${listModel}" method="post">
 	    <input placeholder="Content" type="text" th:field="*{content}"/>
-	    <input type="submit"/>
+	    <button type="submit" class="addBtn">Add</button>
 	</form>
    <!--用th:each接收一個可迭代的物件，將thymeleaf傳遞過來的參數"list"，別名為i-->
     <ul th:each="listModel:${listModels}">
         <!--將i渲染至畫面-->
-        <li th:text="'Date: ' + ${listModel.date} + 'Name: ' + ${listModel.content}">
+        <li><span th:text="'Date: ' + ${listModel.date} + 'Content: ' + ${listModel.content}"></span><span class="close">x</span>
         </li>
     </ul>
+</div>
 </body>
 </html>
