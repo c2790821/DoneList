@@ -38,6 +38,6 @@ public class DoneListController {
 	@PostMapping("/DoneList")
 	public String Add(Model model, ListModel listModel) {
 		doneListAddService.insert(new ListModel(listModel.getContent()));
-		return doneList(model);
+		return "redirect:/API/DoneList";
 	}
 }
