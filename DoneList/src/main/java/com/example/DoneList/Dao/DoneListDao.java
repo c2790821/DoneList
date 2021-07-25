@@ -30,9 +30,10 @@ public class DoneListDao {
 		String query = "SELECT * FROM Done_List";
 		List<Map<String, Object>> results = jdbcTemplate.queryForList(query);
 		for(Map<String, Object> result: results) {
+			Integer id = (Integer) result.get("ID");
 			String content = (String) result.get("CONTENT");
 			String date    = (String) result.get("DATE");
-			doneLists.addFirst(new ListModel(content, date));
+			doneLists.addFirst(new ListModel(id, content, date));
 		}
 		return doneLists;
 	}
